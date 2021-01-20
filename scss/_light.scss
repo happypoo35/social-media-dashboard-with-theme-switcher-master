@@ -1,0 +1,44 @@
+.container.light {
+  background: $White-BG;
+  color: $Very-Dark-Blue-Text;
+
+  &::after {
+    background: $Very-Pale-Blue-Top-BG-Pattern;
+  }
+
+  h5,
+  p,
+  span {
+    color: $Dark-Grayish-Blue-Text;
+  }
+
+  .toggle {
+
+    &:hover {
+      p {
+        color: $Desaturated-Blue-Text;
+      }
+  
+      .toggle-btn {
+        background: $Toggle-dark;
+
+        &::after {
+          background: $Very-Pale-Blue-Top-BG-Pattern;
+        }
+      }
+    }
+  }
+
+  .toggle-btn {
+    background: $Toggle-light;
+
+    &::after {
+      background: $Very-Pale-Blue-Top-BG-Pattern;
+      left: 26px;
+    }
+  }
+
+  .card {
+    background: $Light-Grayish-Blue-Card-BG;
+  }
+}

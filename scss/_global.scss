@@ -1,0 +1,140 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+span {
+  font-weight: 700;
+  @extend %transition;
+}
+
+p {
+  font-size: 0.8rem;
+  letter-spacing: 0.04rem;
+}
+
+span {
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+
+  &.user {
+    img {
+      margin-right: 0.5rem;
+    }
+  }
+
+  &.up,
+  &.down {
+    font-size: 0.7rem;
+
+    img {
+      margin-right: 0.1rem;
+    }
+  }
+
+  &.up {
+    color: $Lime-Green !important;
+  }
+
+  &.down {
+    color: $Bright-Red !important;
+  }
+}
+
+h1 {
+  font-size: 3.5rem;
+  letter-spacing: -0.02rem;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 1.7rem;
+  line-height: 1.5;
+
+  @include mobile {
+    font-size: 1.5rem;
+  }
+}
+
+h3 {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+  @extend %transition;
+}
+
+.toggle {
+  cursor: pointer;
+}
+
+.grid {
+  display: grid;
+  column-gap: 1.9rem;
+  row-gap: 1.5rem;
+  // grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+}
+
+.card {
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  padding: 1.5rem 1.3rem;
+  border-radius: 0.4rem;
+
+  &.facebook,
+  &.twitter,
+  &.instagram,
+  &.youtube {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 0.2rem;
+      width: 100%;
+    }
+  }
+
+  &.facebook {
+    &::before {
+      background: $Facebook;
+    }
+  }
+  &.twitter {
+    &::before {
+      background: $Twitter;
+    }
+  }
+  &.instagram {
+    &::before {
+      background: $Instagram;
+    }
+  }
+  &.youtube {
+    &::before {
+      background: $YouTube;
+    }
+  }
+}

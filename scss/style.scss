@@ -1,0 +1,156 @@
+@import "config";
+@import "global";
+@import "light";
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: $Very-Dark-Blue-BG;
+  color: $White-Text;
+  min-height: 100vh;
+  padding: 2.2rem;
+  z-index: 1;
+  @extend %transition;
+
+  @include mobile {
+    padding: 2rem 1.5rem 3rem;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    height: 30vh;
+    width: 100%;
+    background: $Very-Dark-Blue-Top-BG-Pattern;
+    z-index: -1;
+  }
+}
+
+h5,
+p,
+span {
+  color: $Desaturated-Blue-Text;
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  transition: 0.3s ease;
+
+  &:hover {
+    p {
+      color: white;
+    }
+
+    .toggle-btn::after {
+      background: lighten(#262a47, 10%);
+    }
+  }
+
+  @include mobile {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  &-btn {
+    position: relative;
+    height: 24px;
+    width: 48px;
+    background: $Toggle-dark;
+    border-radius: 2rem;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 3px;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 18px;
+      width: 18px;
+      border-radius: 50%;
+      background: #262a47;
+      transition: 0.3s ease;
+    }
+  }
+}
+
+.header-container,
+main {
+  width: 100%;
+  max-width: 1110px;
+}
+
+.card {
+  background: $Dark-Desaturate-Blue-Card-BG;
+}
+
+.header-container {
+  margin-bottom: 3rem;
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+
+    @include mobile {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 2.5rem;
+
+      .title {
+        width: 100%;
+        border-bottom: 1px solid rgba($Desaturated-Blue-Text, 0.2);
+        padding-bottom: 1.5rem;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
+
+.header-grid {
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 2rem;
+
+    .user {
+      margin-bottom: 1rem;
+    }
+
+    h5 {
+      margin-bottom: 1.5rem;
+    }
+  }
+}
+
+main {
+  h4 {
+    margin-bottom: 1.5rem;
+  }
+
+  .card {
+    display: flex;
+    justify-content: space-between;
+    min-height: 7.7rem;
+
+    .left,
+    .right {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .left {
+      align-items: flex-start;
+    }
+    .right {
+      align-items: flex-end;
+    }
+  }
+}
