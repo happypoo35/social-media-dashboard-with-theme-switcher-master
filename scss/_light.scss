@@ -13,12 +13,11 @@
   }
 
   .toggle {
-
     &:hover {
       p {
         color: $Desaturated-Blue-Text;
       }
-  
+
       .toggle-btn {
         background: $Toggle-dark;
 
@@ -40,5 +39,9 @@
 
   .card {
     background: $Light-Grayish-Blue-Card-BG;
+
+    &:hover {
+      background: darken($Light-Grayish-Blue-Card-BG, 5%);
+    }
   }
 }
